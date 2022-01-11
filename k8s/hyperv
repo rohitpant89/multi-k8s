@@ -1,0 +1,6 @@
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Tools-All
+minikube start --driver=hyperv
+kubectl create secret generic pgpassword --from-literal PGPASSWORD=12345asdf
+minikube tunnel
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.0/deploy/static/provider/cloud/deploy.yaml
+
