@@ -13,7 +13,7 @@ spec:
     - hosts:
         - k8slearn.rohitpant.com
         - www.k8slearn.rohitpant.com
-      secret: k8slearn-rohitpant-com
+      secretName: k8slearn-rohitpant-com
   rules:
     - host: k8slearn.rohitpant.com
       - http:
