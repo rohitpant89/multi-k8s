@@ -27,7 +27,7 @@ before_install:
 ####Set gcloud kubernetes cluster
   - gcloud container clusters get-credentials multi-cluster
 ####Set Docker login
-  - echo "$DOCKER_PASSWORD" | docker loing -u "$DOCKER_USER" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
 ####Build Test image
   - docker build -t rohitpant89/react-test -f ./client/DockerFile.dev ./client
 
