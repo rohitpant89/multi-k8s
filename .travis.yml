@@ -29,7 +29,7 @@ before_install:
 ####Set Docker login
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
 ####Build Test image
-  - docker build -t rohitpant89/react-test -f ./client/DockerFile.dev ./client
+  - docker build -t rohitpant89/react-test -f ./client/Dockerfile.dev ./client
 
 script:
 ### Run Testcases
