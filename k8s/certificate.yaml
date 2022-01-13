@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+ 
+kind: Certificate
+metadata:
+  name: k8slearn-rohitpant-com-tls
+spec:
+  secretName: k8slearn-rohitpant-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: k8slearn.rohitpant.com
+  dnsNames:
+    - k8slearn.rohitpant.com
+    - www.k8slearn.rohitpant.com
