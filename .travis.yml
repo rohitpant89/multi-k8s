@@ -9,8 +9,13 @@ before_install:
 ####Decrypt the google service account encrypted file 
   - openssl aes-256-cbc -K $encrypted_9f3b5599b056_key -iv $encrypted_9f3b5599b056_iv -in service-account.json.enc -out service-account.json -d
 ####Install Google Cloud SDK
-  - curl https://sdk.cloud.google.com || bash --path-update > /dev/null ;
+#####  - curl https://sdk.cloud.google.com || bash --path-update > /dev/null ;
 #####  - source $HOME/google-cloud-sdk/path.bash.inc
+  - gcloud version || true
+  - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
+  # Add gcloud to $PATH
+  - source $HOME/google-cloud-sdk/path.bash.inc
+  - gcloud version
 ####Install/Update kubectl in gcloud cli
   - gcloud components update kubectl
 ####Access google cloud account
